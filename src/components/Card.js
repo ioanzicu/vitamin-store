@@ -1,8 +1,8 @@
 import React from 'react'
 import './Card.css'
 
-const Card = () => (
-  <div className='card'>
+const Card = ({ animation, id, clickedCard }) => (
+  <div className={animation} onClick={() => clickedCard(id)}>
     <img src='juice.jpg' alt='Vitamin Juice' className='card-image' />
     <div className='container'>
       <h3>

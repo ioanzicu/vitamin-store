@@ -3,22 +3,28 @@ import logo from './logo.png'
 import './App.css'
 import Card from './components/Card'
 
-function App() {
+const App = () => {
   const [toggleLogo, setToggleLogo] = useState(true)
+  const [forceUpdate, setForceUpdate] = useState(false)
   const [cards, setCards] = useState([
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-    { id: 4 },
-    { id: 5 },
-    { id: 6 },
-    { id: 7 },
-    { id: 8 },
-    { id: 9 }
+    { id: 0, animation: 'card' },
+    { id: 1, animation: 'card' },
+    { id: 2, animation: 'card' },
+    { id: 3, animation: 'card' },
+    { id: 4, animation: 'card' },
+    { id: 5, animation: 'card' },
+    { id: 6, animation: 'card' },
+    { id: 7, animation: 'card' },
+    { id: 8, animation: 'card' }
   ])
 
-  function toggleLogoEvent(event) {
-    setToggleLogo(!toggleLogo)
+  const toggleLogoEvent = event => setToggleLogo(!toggleLogo)
+
+  const clickCard = id => {
+    let newCards = cards
+    newCards[id].animation = 'card animated zoomOut'
+    setCards(newCards)
+    setForceUpdate(!forceUpdate)
   }
 
   return (
@@ -33,8 +39,14 @@ function App() {
         />
       </header>
       <div className='Grid'>
-        {cards.map(card => (
-          <Card duration={150} key={card.id} />
+        {cards.map(({ animation, id }) => (
+          <Card
+            animation={animation}
+            id={id}
+            clickedCard={clickCard}
+            duration={150}
+            key={id}
+          />
         ))}
       </div>
     </div>
