@@ -4,6 +4,7 @@ import './App.css'
 import Card from './components/Card'
 import Loading from './components/Loading'
 import Navigation from './components/Navigation'
+import data from './data.json'
 
 const App = () => {
   const [toggleLogo, setToggleLogo] = useState(true)
@@ -23,15 +24,22 @@ const App = () => {
   ])
 
   useEffect(() => {
+    setCards(data)
     setTimeout(() => {
       setLoading(false)
     }, 3000)
-  }, [])
+  }, [cards])
 
   const toggleLogoEvent = event => setToggleLogo(!toggleLogo)
 
-  const clickCard = id => {
-    cards[id].animation = 'card animated zoomOut'
+  const showBack = id => {
+    cards[id].animation = 'card card-flip'
+    setCards(cards)
+    setForceUpdate(!forceUpdate)
+  }
+
+  const showFront = id => {
+    cards[id].animation = 'card'
     setCards(cards)
     setForceUpdate(!forceUpdate)
   }
@@ -56,14 +64,14 @@ const App = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className='Grid'>
-          {cards.map(({ animation, id }) => (
+        <div className='Grid animated bounceInUp'>
+          {cards.map(card => (
             <Card
-              animation={animation}
-              id={id}
-              clickedCard={clickCard}
+              {...card}
+              showBack={showBack}
+              showFront={showFront}
               duration={150}
-              key={id}
+              key={card.id}
             />
           ))}
         </div>
