@@ -4,24 +4,14 @@ import './App.css'
 import Card from './components/Card'
 import Loading from './components/Loading'
 import Navigation from './components/Navigation'
-import data from './data.json'
+import data from './data/data.json'
 
 const App = () => {
   const [toggleLogo, setToggleLogo] = useState(true)
   const [forceUpdate, setForceUpdate] = useState(true)
   const [loading, setLoading] = useState(true)
 
-  const [cards, setCards] = useState([
-    { id: 0, animation: 'card' },
-    { id: 1, animation: 'card' },
-    { id: 2, animation: 'card' },
-    { id: 3, animation: 'card' },
-    { id: 4, animation: 'card' },
-    { id: 5, animation: 'card' },
-    { id: 6, animation: 'card' },
-    { id: 7, animation: 'card' },
-    { id: 8, animation: 'card' }
-  ])
+  const [cards, setCards] = useState([])
 
   useEffect(() => {
     setCards(data)
@@ -59,6 +49,11 @@ const App = () => {
           alt='logo'
           onClick={openNav}
         />
+        <h1
+          className={toggleLogo ? 'menu-hidden' : 'menu animated bounceInDown'}
+          onClick={openNav}>
+          Menu
+        </h1>
         <Navigation closeNav={closeNav} />
       </header>
       {loading ? (

@@ -16,15 +16,26 @@ body {
 }
 
 .static-logo {
-  height: 20vmin;
+  height: 8rem;
   margin-top: 1rem;
   cursor: pointer;
 }
 
-.animated-logo {
-  margin-top: 1rem;
-  animation: App-logo-spin infinite 20s linear;
-  height: 20vmin;
+.menu {
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  font-weight: 800;
+  font-size: 35px;
+  text-shadow: 8px 0px 5px rgba(0, 0, 0, 0.42);
+  cursor: pointer;
+}
+
+.menu-hidden {
+  visibility: hidden;
+  font-weight: 800;
+  font-size: 35px;
 }
 
 @keyframes App-logo-spin {
