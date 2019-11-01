@@ -1,11 +1,9 @@
-.html,
+html,
 body {
-  background-color: #09d3ac;
+  background: url('/background.jpg') no-repeat center center fixed, #09d3ac;
   text-align: center;
   height: 100%;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.25) rgba(0, 0, 0, 0.25)), */
-  /* url('/background.jpg') no-repeat center center fixed; */
-  /* background-size: cover; */
+  background-size: cover;
 }
 
 .Grid {
@@ -16,39 +14,38 @@ body {
 }
 
 .static-logo {
-  height: 8rem;
-  margin-top: 1rem;
+  position: fixed;
   cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  height: 130px;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 99;
 }
 
 .menu {
+  position: fixed;
+  cursor: pointer;
   margin-left: auto;
   margin-right: auto;
+  top: 135px;
   left: 0;
   right: 0;
   font-weight: 800;
   font-size: 35px;
   text-shadow: 8px 0px 5px rgba(0, 0, 0, 0.42);
-  cursor: pointer;
+  z-index: 99;
 }
 
 .menu-hidden {
+  position: fixed;
   visibility: hidden;
-  font-weight: 800;
-  font-size: 35px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .App-header {
-  min-height: 20vh;
+  min-height: 30vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
