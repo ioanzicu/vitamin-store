@@ -3,6 +3,7 @@ import logo from './logo.png'
 import './App.css'
 import Card from './components/Card'
 import Loading from './components/Loading'
+import Navigation from './components/Navigation'
 
 const App = () => {
   const [toggleLogo, setToggleLogo] = useState(true)
@@ -30,11 +31,14 @@ const App = () => {
   const toggleLogoEvent = event => setToggleLogo(!toggleLogo)
 
   const clickCard = id => {
-    let newCards = cards
-    newCards[id].animation = 'card animated zoomOut'
-    setCards(newCards)
+    cards[id].animation = 'card animated zoomOut'
+    setCards(cards)
     setForceUpdate(!forceUpdate)
   }
+
+  const openNav = () => (document.getElementById('myNav').style.width = '100%')
+
+  const closeNav = () => (document.getElementById('myNav').style.width = '0%')
 
   return (
     <div className='App'>
@@ -45,7 +49,9 @@ const App = () => {
           onMouseEnter={toggleLogoEvent}
           onMouseLeave={toggleLogoEvent}
           alt='logo'
+          onClick={openNav}
         />
+        <Navigation closeNav={closeNav} />
       </header>
       {loading ? (
         <Loading />
