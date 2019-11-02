@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/vitamin-store/static/css/main.d4b96736.chunk.css",
+    "main.js": "/vitamin-store/static/js/main.e78519ec.chunk.js",
+    "main.js.map": "/vitamin-store/static/js/main.e78519ec.chunk.js.map",
+    "runtime-main.js": "/vitamin-store/static/js/runtime-main.e8075f45.js",
+    "runtime-main.js.map": "/vitamin-store/static/js/runtime-main.e8075f45.js.map",
+    "static/js/2.6bb760da.chunk.js": "/vitamin-store/static/js/2.6bb760da.chunk.js",
+    "static/js/2.6bb760da.chunk.js.map": "/vitamin-store/static/js/2.6bb760da.chunk.js.map",
+    "index.html": "/vitamin-store/index.html",
+    "precache-manifest.159c6ca0f9aabefc3cd67666d10e852c.js": "/vitamin-store/precache-manifest.159c6ca0f9aabefc3cd67666d10e852c.js",
+    "service-worker.js": "/vitamin-store/service-worker.js",
+    "static/css/main.d4b96736.chunk.css.map": "/vitamin-store/static/css/main.d4b96736.chunk.css.map",
+    "static/media/logo.png": "/vitamin-store/static/media/logo.a68903b3.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e8075f45.js",
+    "static/js/2.6bb760da.chunk.js",
+    "static/css/main.d4b96736.chunk.css",
+    "static/js/main.e78519ec.chunk.js"
+  ]
+}
